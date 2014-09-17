@@ -1,0 +1,33 @@
+{
+    "name": "mongoose-observer",
+    "version": "0.1.0",
+    "description": "A small library providing observable changes to mongoose models",
+    "main": "index.js",
+    "scripts": {
+        "test": "make test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/muZk/mongoose-observer.git"
+    },
+    "keywords": [
+        "mongoose",
+        "model"
+    ],
+    "author": "Nicolás Gómez <ngomez@hasu.cl>",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/muZk/mongoose-observer/blob/master/LICENSE-MIT"
+        }
+    ],
+    "bugs": {
+        "url": "https://github.com/muZk/mongoose-observer/issues"
+    },
+    "devDependencies": {
+        "mocha": "~1.21.3",
+        "underscore": "~1.7.0",
+        "mongoose": "latest",
+        "should": "*"
+    }
+}
