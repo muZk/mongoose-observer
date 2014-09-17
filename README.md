@@ -21,7 +21,7 @@ register listeners to create and update events using the following API:
 Example:
 
 ```js
-  var mongooseObserver = require('model-observer')
+  var mongooseObserver = require('mongoose-observer')
   
   mongooseObserver.register('User', 'create', function(createdUser){
     // this callback will be executed when a new user is created
