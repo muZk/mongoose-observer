@@ -1,4 +1,4 @@
-var modelObserver = require('../index.js');
+var mongooseObserver = require('../index.js');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 require('should');
@@ -40,10 +40,10 @@ describe('ModelObsever Tests', function(){
     it('should fire create event when a record is recently created', function(done){
         var User = getModel();
 
-        modelObserver.register('User', 'create', function(doc){
+        mongooseObserver.register('User', 'create', function(doc){
             doc.username.should.equal('username');
             doc.name.should.equal('name');
-            modelObserver.unregister('User', 'create');
+            mongooseObserver.unregister('User', 'create');
             done();
         });
 
@@ -54,12 +54,12 @@ describe('ModelObsever Tests', function(){
     it('should fire update event when a record is updated', function(done){
         var User = getModel();
 
-        modelObserver.register('User', 'create', function(doc){
+        mongooseObserver.register('User', 'create', function(doc){
             doc.username = 'updated username';
             doc.save();
         });
 
-        modelObserver.register('User', 'update', function(doc){
+        mongooseObserver.register('User', 'update', function(doc){
             doc.username.should.equal('updated username');
             done();
         });
