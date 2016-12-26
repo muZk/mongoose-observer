@@ -61,6 +61,23 @@ describe('ModelObsever Tests', function(){
 
         mongooseObserver.register('User', 'update', function(doc){
             doc.username.should.equal('updated username');
+            mongooseObserver.unregister('User', 'create');
+            mongooseObserver.unregister('User', 'update');
+            done();
+        });
+
+        User.create({ username: 'username', name: 'name' });
+    });
+
+    it('should fire remove event when a record is removed', function(done){
+        
+        var User = getModel();
+
+        mongooseObserver.register('User', 'create', function(doc){
+            doc.remove();
+        });
+
+        mongooseObserver.register('User', 'remove', function(doc){
             done();
         });
 

@@ -20,6 +20,10 @@ function registerPre(modelName){
             notify(modelName, 'update', doc);
     });
 
+    schema.post('remove', function(doc){
+        notify(modelName, 'remove', doc);
+    });
+
     registered[modelName] = true;
 
 }
