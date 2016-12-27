@@ -33,6 +33,11 @@ Example:
     // Do something here, for example, emit changes to client via socket.io
   });
 
+  mongooseObserver.register('User', 'remove', function(removedUser){
+    // this callback will be executed when a User record is removed
+    // Do something here, for example, emit changes to client via socket.io
+  });
+
 ```
 
 ## Tests

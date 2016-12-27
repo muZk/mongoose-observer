@@ -78,6 +78,7 @@ describe('ModelObsever Tests', function(){
         });
 
         mongooseObserver.register('User', 'remove', function(doc){
+            doc.username.should.equal('username');
             done();
         });
 
